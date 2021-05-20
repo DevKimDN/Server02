@@ -1,24 +1,24 @@
 //dotenv
-//require('dotenv').config();
+require('dotenv').config();
 
 const express = require ('express')
-//const cors = require('cors');
+const cors = require('cors');
 
 const app = express();
 
-//app.use(cors());
-//pp.use(express.json()); //Body parser
+app.use(cors());
+app.use(express.json()); //Body parser
 
 
 
-const port = 9000;
+const port = process.env.APP_PORT;
 
 
 app.get("/",(req,res,next) =>{
 res.status(200).json({
     status: 'success',
     data: {
-        num: 9999
+        num: 10
     }
 })   
 })
