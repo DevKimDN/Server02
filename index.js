@@ -15,15 +15,6 @@ app.use(express.json()); //Body parser
 const port = process.env.APP_PORT;
 
 
-// app.get("/",(req,res,next) =>{
-// res.status(200).json({
-//     status: 'success',
-//     data: {
-//         num: 10
-//     }
-// })   
-// })
-
 //Mount the route
 app.use('/',Router);
 
