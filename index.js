@@ -1,19 +1,15 @@
 //dotenv
 require('dotenv').config();
 const{connectDB} = require('./db');
-connectDB();
-
-const express = require ('express')
+const express = require ('express');
 const cors = require('cors');
+const Router = require('./routers/myRouter');
 
-const myRouter = require('./routers/myRouter');
-
-
+connectDB();
 const app = express();
 
 app.use(cors());
 app.use(express.json()); //Body parser
-
 
 
 const port = process.env.APP_PORT;
@@ -29,9 +25,9 @@ const port = process.env.APP_PORT;
 // })
 
 //Mount the route
-app.use('/',myRouter);
+app.use('/',Router);
 
 
 app.listen(port, ()=> {
     console.log(`server is running !!! on port ${port}`)
-})
+});
