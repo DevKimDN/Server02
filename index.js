@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json()); //Body parser
 
 
-const port = process.env.APP_PORT;
+const port = process.env.PORT  || 5000;
 
 
 //Mount the route
